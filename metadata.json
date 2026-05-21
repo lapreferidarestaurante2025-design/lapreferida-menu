@@ -1,0 +1,6 @@
+{
+  "name": "Preferida Menu",
+  "description": "Haz tu pedido online en La Preferida Restaurante - Ciénaga, Magdalena. Disfruta de nuestras hamburguesas, salchipapas, asados y más.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@300;400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-sans: "Nunito", sans-serif;
+  --animate-scanline: scanline 2.5s linear infinite;
+  --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;
+
+  @keyframes scanline {
+    0% { transform: translateY(0); opacity: 0.1; }
+    50% { transform: translateY(216px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 0.1; }
+  }
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(0.99); }
+  }
+}

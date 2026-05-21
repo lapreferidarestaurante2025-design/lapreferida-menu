@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "Settings": {
+      "title": "Settings",
+      "description": "General administrator settings",
+      "type": "object",
+      "properties": {
+        "adminPassword": {
+          "type": "string",
+          "description": "The administrator password for system configuration changes"
+        },
+        "promoText": {
+          "type": "string",
+          "description": "The active promotional banner text"
+        },
+        "promoOn": {
+          "type": "boolean",
+          "description": "Whether the promotional banner is active"
+        },
+        "schedule": {
+          "type": "array",
+          "description": "List of daily hours config with index, label, closed flag, openTime, and closeTime"
+        }
+      },
+      "required": [
+        "adminPassword",
+        "promoText",
+        "promoOn"
+      ]
+    },
+    "MenuConfig": {
+      "title": "Menu Configuration",
+      "description": "The list of food categories and products in the digital menu",
+      "type": "object",
+      "properties": {
+        "categories": {
+          "type": "array",
+          "description": "List of categories each containing id, name, note, and items description"
+        }
+      },
+      "required": [
+        "categories"
+      ]
+    },
+    "CouponsConfig": {
+      "title": "Coupons Configuration",
+      "description": "List of active promotional coupons",
+      "type": "object",
+      "properties": {
+        "coupons": {
+          "type": "array",
+          "description": "List of defined coupon configurations with bogo and percentage attributes"
+        }
+      },
+      "required": [
+        "coupons"
+      ]
+    }
+  },
+  "firestore": {
+    "/config/settings": {
+      "schema": "Settings",
+      "description": "Stores current administrative configurations and passwords"
+    },
+    "/config/menu": {
+      "schema": "MenuConfig",
+      "description": "Stores the entire digital menu categories and food items list"
+    },
+    "/config/coupons": {
+      "schema": "CouponsConfig",
+      "description": "Stores the lists of active coupons with discount values"
+    }
+  }
+}
